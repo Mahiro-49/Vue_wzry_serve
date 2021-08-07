@@ -1,6 +1,7 @@
 const express = require('express');
 
 const app = express();
+ 
 
 app.set('secret', '132ad15a')  //全局设置一个secret变量
 
