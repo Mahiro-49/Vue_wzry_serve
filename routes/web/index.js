@@ -147,9 +147,10 @@ module.exports = app => {
 
   // 英雄详情接口
   router.get('/heroes/:id', async(req, res) => {
-    const data = await Hero.findById(req.params.id).lean()
+    const data = await Hero.findById(req.params.id).populate('categories items1 items2 partners.hero restrainted.hero restraint.hero').lean()
     res.send(data)
   })
+  // populate 关联数据模型 调出相关数据
 
   app.use('/web/api', router)
 }

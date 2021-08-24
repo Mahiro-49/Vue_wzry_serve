@@ -22,6 +22,11 @@ const schema = new mongoose.Schema({
     tips: { type: String },
   }],
 
+  playerSkills: [{
+    icon: { type: String },
+    name: { type: String },
+  }],
+
   items1: [{ type: mongoose.SchemaTypes.ObjectId, ref: 'Item' }],
   items2: [{ type: mongoose.SchemaTypes.ObjectId, ref: 'Item' }],
 
@@ -30,6 +35,16 @@ const schema = new mongoose.Schema({
   teamTips: { type: String },
 
   partners: [{
+    hero: { type: mongoose.SchemaTypes.ObjectId, ref: 'Hero' },
+    description: { type: String }
+  }],
+
+  restrainted: [{
+    hero: { type: mongoose.SchemaTypes.ObjectId, ref: 'Hero' },
+    description: { type: String }
+  }],
+
+  restraint: [{
     hero: { type: mongoose.SchemaTypes.ObjectId, ref: 'Hero' },
     description: { type: String }
   }]
